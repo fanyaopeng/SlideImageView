@@ -81,16 +81,16 @@ public class SlideFinishImageView extends FrameLayout {
             super.onViewPositionChanged(changedView, left, top, dx, dy);
             float center = getHeight() / 2;
             int curCenter = (mChild.getTop() + mChild.getBottom()) / 2;
-            float fractor = 0;
+            float fraction = 0;
             if (curCenter < 0) {
                 curCenter = 1;
             }
             if (curCenter > center) {
-                fractor = center / curCenter;
+                fraction = center / curCenter;
             } else {
-                fractor = curCenter / center;
+                fraction = curCenter / center;
             }
-            Integer alpha = (int) (fractor * 0xff);
+            Integer alpha = (int) (fraction * 0xff);
             String hexStr = alpha.toHexString(alpha);
             if (hexStr.length() == 1) {
                 hexStr = "0" + hexStr;
